@@ -1,0 +1,6 @@
+repo_root <- normalizePath(Sys.getenv("AD_MAV_REPO_ROOT", unset = getwd()), winslash = "/", mustWork = FALSE)
+setwd(repo_root)
+dir.create(file.path(repo_root, "results"), recursive = TRUE, showWarnings = FALSE)
+stages <- c("00_validate_inputs.R", "01_population_MAV.R", "01_population_event_study.R", "02_genomic_equations.R", "03_ADNI_longitudinal_genetics.R", "03_ADNI_ATVN_clinical_expression.R", "04_ADNI_clinical_bridge.R", "04_ADNI_MRI_pathology.R", "05_ADNI_5y_performance.R", "06_HABS_HD_concordance.R", "07_AIBL_CAT12_incident_AD.R", "08_genomic_LDSC_boundary.R", "09_session_info.R")
+for (stage in stages) source(file.path("R", stage), encoding = "UTF-8")
+writeLines(c("Pipeline completed.", paste0("Stages: ", paste(stages, collapse = ", "))), file.path("results", "pipeline_status.txt"), useBytes = TRUE)

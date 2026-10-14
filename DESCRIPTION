@@ -1,0 +1,9 @@
+Package: mavadresearch
+Title: Reproducible analysis code for multisystem vulnerability and AD risk
+Version: 1.0.0
+Description: Public scripts for harmonised MAV, genomic boundaries, ADNI structural-clinical bridging and AIBL CAT12 incident-AD validation.
+License: MIT
+Encoding: UTF-8
+Depends: R (>= 4.4.0)
+Imports: data.table, survival, lme4
+Suggests: lavaan, pROC, testthat

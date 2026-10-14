@@ -1,0 +1,7 @@
+config/config.R
+data/
+results/
+*.log
+.Rhistory
+.RData
+.Rproj.user/
